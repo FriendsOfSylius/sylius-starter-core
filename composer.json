@@ -1,5 +1,5 @@
 {
-    "name": "sylius-starter/core",
+    "name": "sylius/starter-core",
     "description": "Sylius Starter core: Castor plugin providing the Sylius Docker service, installer and shared utilities",
     "type": "library",
     "license": "MIT",
@@ -8,7 +8,7 @@
         "castor",
         "starter"
     ],
-    "homepage": "https://github.com/sylius-starter/sylius-starter",
+    "homepage": "https://github.com/Sylius/Starter",
     "authors": [
         {
             "name": "Loïc Frémont",
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SyliusStarter\\Core\\": "src/"
+            "Sylius\\Starter\\Core\\": "src/"
         },
         "files": [
             "src/Installer/functions.php"
@@ -30,7 +30,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "SyliusStarter\\Core\\Tests\\": "tests/"
+            "Sylius\\Starter\\Core\\Tests\\": "tests/"
         }
     },
     "extra": {

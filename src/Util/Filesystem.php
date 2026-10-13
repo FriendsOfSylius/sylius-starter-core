@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Core\Util;
+namespace Sylius\Starter\Core\Util;
 
-use SyliusStarter\Core\App;
+use Sylius\Starter\Core\App;
 use Symfony\Component\Finder\Finder;
 
 use function Castor\fs;

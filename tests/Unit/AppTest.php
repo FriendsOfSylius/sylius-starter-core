@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Core\Tests\Unit;
+namespace Sylius\Starter\Core\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use SyliusStarter\Core\App;
+use Sylius\Starter\Core\App;
 
 final class AppTest extends TestCase
 {

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Core\Component;
+namespace Sylius\Starter\Core\Component;
 
 use Castor\Exception\FunctionConfigurationException;
 

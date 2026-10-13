@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Core;
+namespace Sylius\Starter\Core;
 
 final readonly class App
 {

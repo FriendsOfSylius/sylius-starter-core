@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SyliusStarter\Core\Service;
+namespace Sylius\Starter\Core\Service;
 
 use Castor\Attribute\AsRawTokens;
 use Castor\Attribute\AsTask;
@@ -11,10 +11,10 @@ use Castor\Docker\Service\MariaDBService;
 use Castor\Docker\Service\MySQLService;
 use Castor\Docker\Service\PostgresService;
 use Castor\Docker\Service\SymfonyService;
-use SyliusStarter\Core\App;
-use SyliusStarter\Core\Task\TaskProviderRegistry;
-use SyliusStarter\Core\Util\Assets;
-use SyliusStarter\Core\Util\Fixtures;
+use Sylius\Starter\Core\App;
+use Sylius\Starter\Core\Task\TaskProviderRegistry;
+use Sylius\Starter\Core\Util\Assets;
+use Sylius\Starter\Core\Util\Fixtures;
 
 class SyliusService extends SymfonyService
 {
@@ -35,7 +35,7 @@ class SyliusService extends SymfonyService
     {
         yield from parent::getTasks();
 
-        // Tasks contributed by the installed sylius-starter/* packages
+        // Tasks contributed by the installed sylius/starter-* packages
         yield from TaskProviderRegistry::tasksFor($this);
 
         yield from $this->tasks;
