@@ -14,6 +14,13 @@ final readonly class Database
 {
     public static function migrate(App $app): void
     {
+        if (Runner::isLocal()) {
+            // No "{app}:db:migrate" Docker task next to the application: migrate directly.
+            Runner::run($app, 'php bin/console doctrine:migrations:migrate -n --allow-no-migration --all-or-nothing');
+
+            return;
+        }
+
         run(['castor', $app->name() . ':db:migrate']);
     }
 

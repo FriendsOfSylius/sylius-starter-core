@@ -7,12 +7,14 @@ namespace Sylius\Starter\Core\Util;
 use Sylius\Starter\Core\App;
 use Symfony\Component\Process\Process;
 
-use function Castor\Docker\docker_compose_run;
-
 final readonly class Docker
 {
+    /**
+     * Runs a command in the application builder: Docker by default, or directly
+     * on the host when SYLIUS_STARTER_RUNNER=local (see Runner).
+     */
     public static function run(App $app, string $command): Process
     {
-        return docker_compose_run($command, $app->name() . '-builder');
+        return Runner::run($app, $command);
     }
 }

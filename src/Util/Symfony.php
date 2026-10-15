@@ -13,6 +13,13 @@ final readonly class Symfony
 {
     public static function cacheClear(App $app, bool $warm = true): void
     {
+        if (Runner::isLocal()) {
+            // No "{app}:cache-clear" Docker task next to the application: clear it directly.
+            Runner::run($app, 'php bin/console cache:clear -n' . ($warm ? '' : ' --no-warmup'));
+
+            return;
+        }
+
         $commands = ['castor', $app->name() . ':cache-clear'];
 
         if ($warm) {
