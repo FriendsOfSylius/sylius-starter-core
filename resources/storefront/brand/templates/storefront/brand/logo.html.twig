@@ -3,5 +3,5 @@
 {% if brand.logo %}
     <img src="{{ brand.logo }}" alt="{{ brand.logoAlt ?? brand.name ?? '' }}" class="img-fluid d-block" style="max-height: 2.5rem;">
 {% else %}
-    {% include '@!SyliusShop/shared/logo.html.twig' %}
+    {% include '@SyliusShop/shared/logo.html.twig' %}
 {% endif %}

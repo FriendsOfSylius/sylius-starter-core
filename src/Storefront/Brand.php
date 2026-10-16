@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Sylius\Starter\Core\Storefront;
 
 use Sylius\Starter\Core\App;
+use Sylius\Starter\Core\Util\Yaml;
 use Symfony\Component\Finder\Finder;
 
 use function Castor\fs;
@@ -18,8 +19,8 @@ use function Castor\fs;
  *  - other packages (import...) provide data through a BrandContributorInterface
  *    service generated in the application, never markup.
  *
- * Without a theme, the overridden @SyliusShop/shared/logo.html.twig renders the
- * contributed logo (header, checkout, error pages), otherwise the Sylius logo.
+ * Without a theme, the "sylius_shop.base.header.content.logo" hook renders the
+ * contributed logo in the header, otherwise the Sylius logo.
  *
  * install() is idempotent: every package needing the slot calls it.
  */
@@ -40,6 +41,8 @@ final readonly class Brand
             // Core owns these files: always refresh them.
             fs()->copy($file->getPathname(), $app->directory() . '/' . $file->getRelativePathname(), true);
         }
+
+        Yaml::addImport($app, 'config/packages/_sylius.yaml', Hero::CONFIG_IMPORT);
     }
 
     public static function isInstalled(App $app): bool
