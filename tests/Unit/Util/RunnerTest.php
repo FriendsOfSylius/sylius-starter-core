@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Tests\Unit\Util;
+namespace SyliusStarter\Core\Tests\Unit\Util;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Sylius\Starter\Core\Util\Runner;
+use SyliusStarter\Core\Util\Runner;
 
 #[CoversClass(Runner::class)]
 final class RunnerTest extends TestCase

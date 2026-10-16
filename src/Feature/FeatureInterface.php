@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Feature;
+namespace SyliusStarter\Core\Feature;
 
-use Sylius\Starter\Core\App;
+use SyliusStarter\Core\App;
 
 interface FeatureInterface
 {

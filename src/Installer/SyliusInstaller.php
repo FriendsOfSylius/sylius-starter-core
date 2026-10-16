@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Installer;
+namespace SyliusStarter\Core\Installer;
 
 use Castor\Docker\Installer\AbstractServiceInstaller;
 use Castor\Docker\Installer\Ast\Ast;
@@ -13,14 +13,14 @@ use Castor\Docker\Installer\NeedsDatabase;
 use Castor\Docker\Service\DatabaseServiceInterface;
 use Castor\Docker\Service\PhpMode;
 use Castor\Docker\Service\ServiceInterface;
-use Sylius\Starter\Core\App;
-use Sylius\Starter\Core\EnvFile;
-use Sylius\Starter\Core\Service\SyliusService;
-use Sylius\Starter\Core\Util\Assets;
-use Sylius\Starter\Core\Util\Database;
-use Sylius\Starter\Core\Util\Docker;
-use Sylius\Starter\Core\Util\Fixtures;
-use Sylius\Starter\Core\Util\Symfony;
+use SyliusStarter\Core\App;
+use SyliusStarter\Core\EnvFile;
+use SyliusStarter\Core\Service\SyliusService;
+use SyliusStarter\Core\Util\Assets;
+use SyliusStarter\Core\Util\Database;
+use SyliusStarter\Core\Util\Docker;
+use SyliusStarter\Core\Util\Fixtures;
+use SyliusStarter\Core\Util\Symfony;
 
 use function Castor\context;
 use function Castor\Docker\docker_compose_run;

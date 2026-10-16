@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Util;
+namespace SyliusStarter\Core\Util;
 
-use Sylius\Starter\Core\App;
+use SyliusStarter\Core\App;
 use Symfony\Component\Process\Process;
 
 final readonly class Docker

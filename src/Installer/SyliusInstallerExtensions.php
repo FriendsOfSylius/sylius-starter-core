@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Installer;
+namespace SyliusStarter\Core\Installer;
 
 final class SyliusInstallerExtensions
 {

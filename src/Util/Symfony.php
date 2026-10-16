@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Util;
+namespace SyliusStarter\Core\Util;
 
-use Sylius\Starter\Core\App;
+use SyliusStarter\Core\App;
 
 use function Castor\fs;
 use function Castor\run;

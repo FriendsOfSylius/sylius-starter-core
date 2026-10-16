@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Storefront;
+namespace SyliusStarter\Core\Storefront;
 
-use Sylius\Starter\Core\App;
-use Sylius\Starter\Core\Util\Yaml;
+use SyliusStarter\Core\App;
+use SyliusStarter\Core\Util\Yaml;
 use Symfony\Component\Finder\Finder;
 
 use function Castor\fs;

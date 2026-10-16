@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Installer;
+namespace SyliusStarter\Core\Installer;
 
 use Castor\Docker\Installer\Input;
-use Sylius\Starter\Core\App;
+use SyliusStarter\Core\App;
 
 /**
  * Lets a package hook into the Sylius service installer (castor docker:service:install sylius):

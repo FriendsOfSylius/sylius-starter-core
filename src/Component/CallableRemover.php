@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Component;
+namespace SyliusStarter\Core\Component;
 
-use Sylius\Starter\Core\App;
+use SyliusStarter\Core\App;
 
 final readonly class CallableRemover implements RemoverInterface
 {

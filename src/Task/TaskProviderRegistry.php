@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Task;
+namespace SyliusStarter\Core\Task;
 
-use Sylius\Starter\Core\Service\SyliusService;
+use SyliusStarter\Core\Service\SyliusService;
 
 /**
  * Packages (themes, plugins, import, ...) register their Castor tasks here,

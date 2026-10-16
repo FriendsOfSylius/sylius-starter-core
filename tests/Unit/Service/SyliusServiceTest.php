@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Starter\Core\Tests\Unit\Service;
+namespace SyliusStarter\Core\Tests\Unit\Service;
 
 use Castor\Attribute\AsTask;
 use Castor\Docker\Service\MySQLService;
 use Castor\Docker\Service\PHPService;
 use Castor\Docker\Service\PostgresService;
 use PHPUnit\Framework\TestCase;
-use Sylius\Starter\Core\Service\SyliusService;
-use Sylius\Starter\Core\Task\TaskProviderRegistry;
+use SyliusStarter\Core\Service\SyliusService;
+use SyliusStarter\Core\Task\TaskProviderRegistry;
 
 final class SyliusServiceTest extends TestCase
 {
