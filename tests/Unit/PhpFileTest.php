@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace SyliusStarter\Core\Tests\Unit;
 
 use Castor\Container;
+use Castor\Runner\Parallel\JobRegistry;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use SyliusStarter\Core\PhpFile;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Filesystem\Filesystem;
 
 #[CoversClass(PhpFile::class)]
@@ -37,6 +39,11 @@ final class PhpFileTest extends TestCase
 
         $prop = new \ReflectionProperty(Container::class, 'fs');
         $prop->setValue($container, $this->filesystem);
+
+        // Castor 1.9+ resolves io() and output() through the job registry of parallel().
+        if (property_exists(Container::class, 'jobRegistry')) {
+            (new \ReflectionProperty(Container::class, 'jobRegistry'))->setValue($container, new JobRegistry(new ArrayInput([])));
+        }
 
         Container::set($container);
     }
