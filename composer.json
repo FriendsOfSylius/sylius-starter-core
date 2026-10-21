@@ -17,7 +17,7 @@
     ],
     "require": {
         "php": ">=8.3",
-        "castor-php/docker": "^0.6.0",
+        "castor-php/docker": "^0.10",
         "nikic/php-parser": "^5.0"
     },
     "autoload": {
