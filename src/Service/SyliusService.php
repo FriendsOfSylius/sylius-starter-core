@@ -6,7 +6,6 @@ namespace SyliusStarter\Core\Service;
 
 use Castor\Attribute\AsRawTokens;
 use Castor\Attribute\AsTask;
-use Castor\Docker\Service\DatabaseServiceInterface;
 use Castor\Docker\Service\MariaDBService;
 use Castor\Docker\Service\MySQLService;
 use Castor\Docker\Service\PhpMode;
@@ -23,8 +22,6 @@ use function Castor\Docker\docker_compose;
 class SyliusService extends SymfonyService
 {
     private iterable $tasks = [];
-
-    private ?DatabaseServiceInterface $databaseService = null;
 
     public function __construct(string $name = 'app')
     {
@@ -113,22 +110,22 @@ class SyliusService extends SymfonyService
         }
     }
 
-    public function withDatabaseService(DatabaseServiceInterface $databaseService): static
-    {
-        parent::withDatabaseService($databaseService);
-        $this->databaseService = $databaseService;
-
-        return $this;
-    }
-
     public function databaseEngine(): ?string
     {
-        return match (true) {
-            $this->databaseService instanceof MySQLService,
-            $this->databaseService instanceof MariaDBService => 'MySQL',
-            $this->databaseService instanceof PostgresService => 'PostgreSQL',
-            default => null,
-        };
+        foreach ($this->getLinks() as $service) {
+            $engine = match (true) {
+                $service instanceof MySQLService,
+                $service instanceof MariaDBService => 'MySQL',
+                $service instanceof PostgresService => 'PostgreSQL',
+                default => null,
+            };
+
+            if (null !== $engine) {
+                return $engine;
+            }
+        }
+
+        return null;
     }
 
     public function withTasks(iterable $tasks): self

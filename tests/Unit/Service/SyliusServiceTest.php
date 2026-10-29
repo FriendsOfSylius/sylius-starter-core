@@ -29,14 +29,14 @@ final class SyliusServiceTest extends TestCase
 
     public function testExposesLinkedLocalDatabaseEngine(): void
     {
-        $service = (new SyliusService())->withDatabaseService(new PostgresService());
+        $service = (new SyliusService())->link(new PostgresService());
 
         static::assertSame('PostgreSQL', $service->databaseEngine());
     }
 
     public function testExposesMySqlForLinkedMySqlService(): void
     {
-        $service = (new SyliusService())->withDatabaseService(new MySQLService());
+        $service = (new SyliusService())->link(new MySQLService());
 
         static::assertSame('MySQL', $service->databaseEngine());
     }

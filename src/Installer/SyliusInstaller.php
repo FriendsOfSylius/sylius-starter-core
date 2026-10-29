@@ -87,7 +87,7 @@ final class SyliusInstaller extends AbstractServiceInstaller implements NeedsDat
         }
 
         if (($answers['database'] ?? null) !== null) {
-            $expression->callMethod('withDatabaseService', [Ast::var((string) $answers['database'])]);
+            $expression->callMethod('link', [Ast::var((string) $answers['database'])]);
         }
     }
 
@@ -103,7 +103,7 @@ final class SyliusInstaller extends AbstractServiceInstaller implements NeedsDat
         }
 
         if (($answers['database_instance'] ?? null) instanceof DatabaseServiceInterface) {
-            $service->withDatabaseService($answers['database_instance']);
+            $service->link($answers['database_instance']);
         }
 
         return $service;
